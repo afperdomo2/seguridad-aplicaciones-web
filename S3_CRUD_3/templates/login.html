@@ -1,0 +1,30 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+
+<html> <!-- Elemento raíz del documento HTML -->
+<head>
+    <title>Iniciar sesión</title> <!-- Definición del título de la página que se mostrará en la pestaña del navegador -->
+</head>
+
+<body> <!-- Cuerpo del documento HTML, contiene el contenido visible de la página -->
+
+    <h1>Iniciar sesión</h1> <!-- Título principal de la página, un encabezado de nivel 1 que indica la acción de iniciar sesión -->
+
+    <form method="POST">
+    <!-- Formulario utilizado para enviar datos de inicio de sesión al servidor con el método POST -->
+    
+        <label for="username">Usuario:</label>
+        <!-- Etiqueta de texto para describir el campo de entrada "username" -->
+        <input type="text" id="username" name="username" required><br>
+        <!-- Campo de entrada de texto para ingresar el nombre de usuario, con el atributo "required" que indica que es obligatorio ingresar un valor -->
+
+        <label for="password">Contraseña:</label>
+        <!-- Etiqueta de texto para describir el campo de entrada "password" -->
+        <input type="password" id="password" name="password" required><br>
+        <!-- Campo de entrada de contraseña para ingresar la contraseña, con el atributo "required" que indica que es obligatorio ingresar un valor y que oculta los caracteres de la contraseña por seguridad -->
+
+        <input type="submit" value="Iniciar sesión">
+        <!-- Botón de envío del formulario con el texto "Iniciar sesión" que envía los datos de inicio de sesión al servidor -->
+    </form>
+
+</body>
+</html>

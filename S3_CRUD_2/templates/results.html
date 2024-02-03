@@ -1,0 +1,26 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+
+<html> <!-- Elemento raíz del documento HTML -->
+<head>
+    <title>Resultados de la Búsqueda</title> <!-- Definición del título de la página que se mostrará en la pestaña del navegador -->
+</head>
+
+<body> <!-- Cuerpo del documento HTML, contiene el contenido visible de la página -->
+
+    <h1>Resultados de la Búsqueda</h1> <!-- Título principal de la página, un encabezado de nivel 1 que muestra los resultados de la búsqueda -->
+
+    <ul> <!-- Lista desordenada que se utilizará para mostrar los resultados de la búsqueda -->
+        {% for result in results %}
+        <!-- Un bucle que itera a través de los resultados de la búsqueda proporcionados y los muestra en la lista -->
+
+            <li>{{ result[0] }} - {{ result[1] }} - {{ result[2] }}</li>
+            <!-- Elemento de lista que muestra los detalles de un resultado de búsqueda, como ID, nombre y descripción -->
+        {% endfor %}
+        <!-- Fin del bucle que itera a través de los resultados de la búsqueda -->
+    </ul>
+
+    <a href="/">Volver</a>
+    <!-- Enlace "Volver" que dirige a la página principal (raíz), generalmente utilizado para regresar después de ver los resultados de la búsqueda -->
+
+</body>
+</html>

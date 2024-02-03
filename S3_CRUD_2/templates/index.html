@@ -1,0 +1,25 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+
+<html> <!-- Elemento raíz del documento HTML -->
+<head>
+    <title>Buscar Registros</title> <!-- Definición del título de la página que se mostrará en la pestaña del navegador -->
+</head>
+
+<body> <!-- Cuerpo del documento HTML, contiene el contenido visible de la página -->
+
+    <h1>Buscar Registros</h1> <!-- Título principal de la página, un encabezado de nivel 1 que indica la acción de búsqueda de registros -->
+
+    <form method="POST" action="/search">
+    <!-- Formulario utilizado para enviar una consulta de búsqueda al servidor con el método POST y la acción "/search" -->
+    
+        <label for="search_term">Buscar por nombre:</label>
+        <!-- Etiqueta de texto para describir el campo de entrada "search_term" -->
+        <input type="text" id="search_term" name="search_term" required>
+        <!-- Campo de entrada de texto para ingresar el término de búsqueda, con el atributo "required" que indica que es obligatorio ingresar un valor -->
+
+        <input type="submit" value="Buscar">
+        <!-- Botón de envío del formulario con el texto "Buscar" que envía la consulta de búsqueda al servidor -->
+    </form>
+
+</body>
+</html>

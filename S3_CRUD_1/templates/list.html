@@ -1,0 +1,43 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+
+<html> <!-- Elemento raíz del documento HTML -->
+<head>
+    <title>CRUD App - Listar Registros</title> <!-- Definición del título de la página que se mostrará en la pestaña del navegador -->
+</head>
+
+<body> <!-- Cuerpo del documento HTML, contiene el contenido visible de la página -->
+
+    <h1>Lista de Registros</h1> <!-- Título principal de la página, un encabezado de nivel 1 que indica la lista de registros -->
+
+    <a href="{{ url_for('add') }}">Agregar Registro</a>
+    <!-- Enlace "Agregar Registro" que dirige a una página o acción llamada "add" donde los usuarios pueden agregar nuevos registros -->
+
+    <table> <!-- Tabla que se utilizará para mostrar los registros -->
+        <tr> <!-- Fila de encabezado de la tabla -->
+            <th>ID</th> <!-- Celda de encabezado para el ID del registro -->
+            <th>Nombre</th> <!-- Celda de encabezado para el nombre del registro -->
+            <th>Descripción</th> <!-- Celda de encabezado para la descripción del registro -->
+            <th>Acciones</th> <!-- Celda de encabezado para las acciones que se pueden realizar en los registros -->
+        </tr>
+
+        {% for registro in registros %}
+        <!-- Un bucle que itera a través de los registros proporcionados y los muestra en la tabla -->
+
+        <tr> <!-- Fila de datos de la tabla -->
+            <td>{{ registro[0] }}</td> <!-- Celda que muestra el ID del registro -->
+            <td>{{ registro[1] }}</td> <!-- Celda que muestra el nombre del registro -->
+            <td>{{ registro[2] }}</td> <!-- Celda que muestra la descripción del registro -->
+            <td>
+                <a href="{{ url_for('edit', id=registro[0]) }}">Editar</a>
+                <!-- Enlace "Editar" que dirige a una página o acción llamada "edit" con el ID del registro para la edición -->
+                <a href="{{ url_for('delete', id=registro[0]) }}">Eliminar</a>
+                <!-- Enlace "Eliminar" que dirige a una página o acción llamada "delete" con el ID del registro para su eliminación -->
+            </td>
+        </tr>
+
+        {% endfor %}
+        <!-- Fin del bucle que itera a través de los registros -->
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+
+<html> <!-- Elemento raíz del documento HTML -->
+<head>
+    <title>CRUD App - Agregar Registro</title> <!-- Definición del título de la página que se mostrará en la pestaña del navegador -->
+</head>
+
+<body> <!-- Cuerpo del documento HTML, contiene el contenido visible de la página -->
+
+    <h1>Agregar Registro</h1> <!-- Título principal de la página, un encabezado de nivel 1 que indica la acción de agregar un registro -->
+
+    <form method="POST" action="">
+    <!-- Formulario utilizado para enviar datos del nuevo registro al servidor con el método POST -->
+    
+        <label for="nombre">Nombre:</label>
+        <!-- Etiqueta de texto para describir el campo de entrada "Nombre" -->
+        <input type="text" id="nombre" name="nombre" required><br>
+        <!-- Campo de entrada de texto para el nombre del registro con un atributo "required" que indica que es obligatorio -->
+
+        <label for="descripcion">Descripción:</label>
+        <!-- Etiqueta de texto para describir el campo de entrada "Descripción" -->
+        <input type="text" id="descripcion" name="descripcion" required><br>
+        <!-- Campo de entrada de texto para la descripción del registro con un atributo "required" que indica que es obligatorio -->
+
+        <input type="submit" value="Guardar">
+        <!-- Botón de envío del formulario con el texto "Guardar" que envía los datos al servidor para guardar el nuevo registro -->
+    </form>
+
+    <a href="{{ url_for('list') }}">Volver</a>
+    <!-- Enlace "Volver" que dirige a la página de listado de registros, generalmente utilizada para regresar después de agregar un nuevo registro -->
+
+</body>
+</html>

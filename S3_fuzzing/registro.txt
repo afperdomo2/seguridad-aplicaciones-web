@@ -1,0 +1,12 @@
+2024-01-23 17:12:07 - Entrada: juan$ UNIMINUTO
+2024-01-23 17:12:07 - Entrada no válida: juan$ UNIMINUTO
+2024-01-23 17:12:38 - Entrada: juan. UNIMINUTO
+2024-01-23 17:12:38 - Entrada no válida: juan. UNIMINUTO
+2024-01-23 17:12:53 - Entrada: juan. UNIMINUTO
+2024-01-23 17:12:53 - Entrada no válida: juan. UNIMINUTO
+2024-01-23 17:13:15 - Entrada: juan UNIMINUTO
+2024-01-23 17:13:15 - Mensaje recibido con entrada válida: juan UNIMINUTO
+2024-01-23 20:04:05 - Entrada: enero 2024 UNIMINUTO
+2024-01-23 20:04:05 - Mensaje recibido con entrada válida: enero 2024 UNIMINUTO
+2024-01-23 20:04:28 - Entrada: e.nero 2024 $UNIMINUTO
+2024-01-23 20:04:28 - Entrada no válida: e.nero 2024 $UNIMINUTO

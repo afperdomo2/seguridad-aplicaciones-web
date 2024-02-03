@@ -1,0 +1,21 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+<html> <!-- Elemento raíz del documento HTML -->
+<head>
+    <title>CRUD App</title> <!-- Definición del título de la página que se mostrará en la pestaña del navegador -->
+</head>
+
+<body> <!-- Cuerpo del documento HTML, contiene el contenido visible de la página -->
+
+    <h1>CRUD App</h1> <!-- Título principal de la página, un encabezado de nivel 1 -->
+
+    <ul> <!-- Lista desordenada que contiene elementos de lista -->
+        <li><a href="{{ url_for('list') }}">Listar Registros</a></li>
+        <!-- Elemento de lista que contiene un enlace "Listar Registros" que dirige a una página o acción llamada "list" -->
+        
+        <li><a href="{{ url_for('add') }}">Agregar Registro</a></li>
+        <!-- Elemento de lista que contiene un enlace "Agregar Registro" que dirige a una página o acción llamada "add" -->
+    </ul>
+
+</body>
+</html>
+
