@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Criptografía UNIMINUTO</title>
+</head>
+<body>
+    <h1>App de Criptografía UNIMINUTO</h1>
+    <form method="POST">
+        <label for="message">Ingresa la clave:</label>
+        <input type="text" name="message" id="message" required>
+        <input type="submit" value="Cifrar">
+    </form>
+    {% if original_message %}
+    <h2>Clave Original:</h2>
+    <p>{{ original_message }}</p>
+    <h2>Clave Cifrada:</h2>
+    <p>{{ encrypted_message }}</p>
+    {% endif %}
+</body>
+</html>
