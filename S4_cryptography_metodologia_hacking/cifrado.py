@@ -6,46 +6,53 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 import base64
 from datetime import datetime
 
+
 # Función para cargar registros desde un archivo JSON
 def cargar_registro_desde_json(nombre_archivo):
     try:
-        with open(nombre_archivo, 'r') as archivo:
+        with open(nombre_archivo, "r") as archivo:
             return json.load(archivo)
     except FileNotFoundError:
         return []
 
+
 # Función para guardar registros en un archivo JSON
 def guardar_en_json(nombre_archivo, registro):
-    with open(nombre_archivo, 'w') as archivo:
+    with open(nombre_archivo, "w") as archivo:
         json.dump(registro, archivo, indent=4)
+
 
 # Función para generar una clave a partir de una contraseña utilizando PBKDF2HMAC
 def generar_clave_desde_contraseña(contraseña):
-    salt = b'salt_unico_y_random'
+    salt = b"salt_unico_y_random"
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
         iterations=100000,
         salt=salt,
         length=32,
-        backend=default_backend()
+        backend=default_backend(),
     )
     clave_derivada = kdf.derive(contraseña.encode())
     return base64.urlsafe_b64encode(clave_derivada)
 
+
 # Función para guardar datos en un archivo binario
 def guardar_en_archivo(nombre_archivo, datos):
-    with open(nombre_archivo, 'ab') as archivo:
-        archivo.write(datos + b'\n')  # Agrega el mensaje cifrado con un salto de línea
+    with open(nombre_archivo, "ab") as archivo:
+        archivo.write(datos + b"\n")  # Agrega el mensaje cifrado con un salto de línea
+
 
 # Función para guardar datos en un archivo de texto
 def guardar_en_archivo_texto(nombre_archivo, datos):
-    with open(nombre_archivo, 'a') as archivo:
-        archivo.write(datos + '\n')  # Agrega el mensaje cifrado con un salto de línea
+    with open(nombre_archivo, "a") as archivo:
+        archivo.write(datos + "\n")  # Agrega el mensaje cifrado con un salto de línea
+
 
 # Función para guardar el registro en un archivo JSON
 def guardar_en_json(nombre_archivo, registro):
-    with open(nombre_archivo, 'w') as archivo:
+    with open(nombre_archivo, "w") as archivo:
         json.dump(registro, archivo, indent=4)
+
 
 # Función para cifrar un mensaje, guardarlo y registrar la operación
 def cifrar_y_guardar(contraseña, mensaje, registro):
@@ -59,26 +66,30 @@ def cifrar_y_guardar(contraseña, mensaje, registro):
 
     # Formatear el registro como una cadena de texto
     entrada = f"{fecha_hora} | Mensaje original: {mensaje.decode()} | Mensaje cifrado: {encrypted_message.decode()}"
-    
+
     # Guardar en el archivo de registro de texto
     registro.append(entrada)
     guardar_en_archivo_texto("registro.txt", entrada)
 
     # Guardar en el archivo de registro JSON
-    registro.append({
-        "Fecha y Hora": fecha_hora,
-        "Mensaje Original": mensaje.decode(),
-        "Mensaje Cifrado": encrypted_message.decode()
-    })
+    registro.append(
+        {
+            "Fecha y Hora": fecha_hora,
+            "Mensaje Original": mensaje.decode(),
+            "Mensaje Cifrado": encrypted_message.decode(),
+        }
+    )
     guardar_en_json("registro.json", registro)
 
     # Guardar el mensaje cifrado en un archivo separado
     guardar_en_archivo("mensaje_cifrado.txt", encrypted_message)
 
+
 # Función para leer datos desde un archivo binario
 def leer_desde_archivo(nombre_archivo):
-    with open(nombre_archivo, 'rb') as archivo:
+    with open(nombre_archivo, "rb") as archivo:
         return archivo.read().splitlines()
+
 
 # Función para descifrar un mensaje y mostrarlo
 def descifrar_y_mostrar(contraseña):
@@ -92,6 +103,7 @@ def descifrar_y_mostrar(contraseña):
         print("Mensaje descifrado:", decrypted_message.decode())
     except Exception as e:
         print(f"Error al descifrar: {e}")
+
 
 # Inicializar el registro cargando datos existentes desde el archivo JSON
 registro = cargar_registro_desde_json("registro.json")

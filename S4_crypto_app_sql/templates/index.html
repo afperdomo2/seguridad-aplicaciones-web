@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cifrado y Almacenamiento</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Cifrado y Almacenamiento</h1>
     <form method="POST">
-        <label for="message">Mensaje:</label>
-        <input type="text" name="message" id="message" required>
-        <input type="submit" value="Cifrar y Almacenar">
+      <label for="message">Mensaje:</label>
+      <input type="text" name="message" id="message" required />
+      <input type="submit" value="Cifrar y Almacenar" />
     </form>
     <a href="{{ url_for('messages') }}">Ver Mensajes Almacenados</a>
-</body>
+  </body>
 </html>

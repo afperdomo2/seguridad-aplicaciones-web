@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mensajes Almacenados</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Mensajes Almacenados</h1>
     <ul>
-        {% for message in messages %}
-            <li><strong>Mensaje Original:</strong> {{ message[0] }}</li>
-            <li><strong>Mensaje Cifrado:</strong> {{ message[1] }}</li>
-            <hr>
-        {% endfor %}
+      {% for message in messages %}
+      <li><strong>Mensaje Original:</strong> {{ message[0] }}</li>
+      <li><strong>Mensaje Cifrado:</strong> {{ message[1] }}</li>
+      <hr />
+      {% endfor %}
     </ul>
     <a href="{{ url_for('index') }}">Volver al Inicio</a>
-</body>
+  </body>
 </html>
