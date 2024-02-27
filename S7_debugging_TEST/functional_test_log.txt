@@ -1,0 +1,1 @@
+Prueba funcional: Página de inicio cargada correctamente

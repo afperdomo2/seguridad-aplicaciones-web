@@ -1,0 +1,10 @@
+# Entorno de desarrollo local
+__pycache__/
+.env
+
+# Archivos de registro y archivos generados
+*.log
+*.db
+
+# Dependencias específicas del entorno
+venv/

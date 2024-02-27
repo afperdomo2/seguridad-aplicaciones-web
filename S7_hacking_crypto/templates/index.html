@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aplicación de Cifrado</title>
+  </head>
+  <body>
+    <h1>Aplicación de Cifrado</h1>
+    <form method="POST">
+      <label for="mensaje">Ingrese un mensaje:</label>
+      <input type="text" name="mensaje" id="mensaje" required />
+      <input type="submit" value="Cifrar y Descifrar" />
+    </form>
+    <h2>Mensaje Cifrado:</h2>
+    <p>{{ mensaje_cifrado }}</p>
+    <h2>Mensaje Descifrado:</h2>
+    <p>{{ mensaje_descifrado }}</p>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!-- 
+    Página de inicio de sesión HTML.
+
+    Este documento HTML crea una interfaz de inicio de sesión.
+    Los usuarios pueden ingresar su nombre de usuario y contraseña,
+    y al enviar el formulario, se enviarán los datos a la ruta "/login"
+    utilizando el método POST.
+
+    Detalles del formulario:
+    - Campo de nombre de usuario (username).
+    - Campo de contraseña (password).
+    - Botón de inicio de sesión que envía los datos al servidor.
+
+    Además, si hay un error durante el inicio de sesión, se mostrará en rojo.
+
+    Se proporciona un enlace para redirigir a los usuarios que no tienen una cuenta
+    a la página de registro ("/register").
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <h2>Login</h2>
+    {% if error %}
+    <p style="color: red">{{ error }}</p>
+    {% endif %}
+    <form method="POST" action="/login">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required /><br />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required /><br />
+      <button type="submit">Login</button>
+    </form>
+    <p>¿No tienes una cuenta? <a href="/register">Regístrate aquí</a></p>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!-- 
+    Página de dashboard HTML.
+
+    Este documento HTML representa la página de dashboard de la aplicación.
+    Dependiendo de si el usuario ha iniciado sesión o no, se mostrará información diferente.
+
+    Detalles:
+    - Si el usuario ha iniciado sesión, se muestra un saludo personalizado y un enlace para cerrar sesión.
+    - Si el usuario no ha iniciado sesión, se muestra un mensaje indicando que debe iniciar sesión y un enlace para hacerlo.
+
+    Nota: Esta página se utiliza para proporcionar una experiencia personalizada según el estado de inicio de sesión del usuario.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    {% if 'user_id' in session %}
+    <h2>Sesión iniciada como {{ session["username"] }}.</h2>
+    <a href="/logout">Cerrar sesión</a>
+    {% else %}
+    <p>Por favor, inicia sesión para acceder al dashboard.</p>
+    <a href="/login">Iniciar sesión</a>
+    {% endif %}
+  </body>
+</html>
